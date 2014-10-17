@@ -7,11 +7,13 @@
     name = Anirudh Srinivas
     email = anirudhsrinivas@gmail.com
 [alias]
-    st = status
-    prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    br = branch
     cdiff = diff --color
-    update = !gx-update
+    co = checkout
+    prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     publish = !gx-publish
+    update = !gx-update
+    st = status
 [push]
     default = tracking
 [github]

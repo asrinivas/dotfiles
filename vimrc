@@ -6,35 +6,19 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'mileszs/ack.vim'
-Plugin 'matchit.zip'
-Plugin 'taglist.vim'
-Plugin 'pep8'
-Plugin 'localvimrc'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'LargeFile'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'godlygeek/tabular'
+Plugin 'LargeFile'
 Plugin 'tpope/vim-eunuch'
-Plugin 'jsbeautify'
-Plugin 'amadeus/powerline-improved'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-markdown'
-Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 
 filetype plugin indent on
@@ -87,9 +71,9 @@ set autoindent
 set expandtab
 
 " Default to 2 spaces per tab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " More history
 set history=100
@@ -103,10 +87,7 @@ set updatetime=750
 
 " Enable file backup (atomic)
 set noswapfile
-"set directory=~/.vim/swap,/tmp,.
-set backupdir=~/.vim/backup,/tmp,.
-set backup
-set writebackup
+set nobackup
 
 " Scroll the view faster
 noremap <C-e> 3<C-e>
@@ -210,7 +191,7 @@ inoremap <c-j> <esc>o
 nnoremap <leader>ss :syntax sync fromstart<cr>:redraw!<cr>
 
 " Configure syntastic
-let g:syntastic_mode_map = {'mode': 'active', 'passive_filetypes': ['erlang', 'html'] }
+let g:syntastic_mode_map = {'mode': 'active', 'passive_filetypes': ['erlang', 'html', 'scala'] }
 let g:syntastic_javascript_jsl_conf = "-conf ~/.jslintrc"
 let g:syntastic_always_populate_loc_list=1
 
@@ -291,14 +272,21 @@ iabbrev ldiz ( ͠° ͟ʖ ͡°)
 
 " Set the Gvim options
 if has("gui_running")
-    set guifont=Monaco:h14
-    set columns=140
-    set lines=40
+    set guifont=Monaco:h12
+    set columns=160
+    set lines=50
     set sessionoptions=blank,buffers,curdir,folds,localoptions,options,resize,tabpages,winpos,winsize
     map <C-Z> :mksession! ~/.vim/.session <CR>
     map <C-X> :source ~/.vim/.session <CR>
-    colorscheme molokai
+    colorscheme solarized
     set fuopt+=maxhorz
     set guioptions=egmt
+    set background=dark
 endif
+
+let g:solarized_termcolors=256
+
+" Scala settings
+let g:scala_sort_across_groups=1
+let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
 
