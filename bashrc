@@ -38,9 +38,5 @@ export PATH=$PATH:$(brew --prefix mysql)/bin
 export PATH=$PATH:~/.play
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# AWS
-export AWS_ACCESS_KEY_ID=AKIAJT5NEP6MIDLZEGOQ
-export AWS_SECRET_ACCESS_KEY="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"
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
