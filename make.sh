@@ -11,5 +11,3 @@ cp gitignore ~/.gitignore
 cp vimrc ~/.vimrc
 cp zshrc ~/.zshrc
 cp -R vim ~/.vim
-
-# Syncs current state of dotfiles to dotfiles dir

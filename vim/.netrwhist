@@ -1,8 +1,8 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/anirudh/workspace/mlclass/mlclass-ex6-006/mlclass-ex6'
-let g:netrw_dirhist_2='/Users/anirudh/workspace/mlclass/mlclass-ex6-006'
-let g:netrw_dirhist_3='/Users/anirudh/workspace/mlclass/mlclass-ex6-006/mlclass-ex6'
-let g:netrw_dirhist_4='/Users/anirudh/workspace/mlclass/mlclass-ex7-006/mlclass-ex7'
-let g:netrw_dirhist_5='/Users/anirudh/workspace/mlclass/mlclass-ex8-006'
-let g:netrw_dirhist_6='/Users/anirudh/workspace/mlclass/mlclass-ex8-006/mlclass-ex8'
+let g:netrw_dirhist_1='/Users/anirudh/workspace/Iterable'
+let g:netrw_dirhist_2='/Users/anirudh/workspace/Iterable/crontabs'
+let g:netrw_dirhist_3='/Users/anirudh/workspace/Iterable'
+let g:netrw_dirhist_4='/Users/anirudh/workspace/Iterable/app'
+let g:netrw_dirhist_5='/Users/anirudh/workspace/Iterable/app/service'
+let g:netrw_dirhist_6='/Users/anirudh/workspace/Iterable/GeoIp'

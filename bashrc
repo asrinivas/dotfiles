@@ -20,10 +20,12 @@ alias gd='git cdiff'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
 
-# Git prompt
+# Git prompt/completion
 source ~/.git-prompt.sh
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+source ~/.git-completion.sh
+#PS1='[\u@\h \W\$(__git_ps1 " (%s)")]\ $ '
 PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+export GIT_PS1_SHOWCOLORHINTS=1
 
 # Vagrant settings
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
@@ -40,3 +42,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# AWS
+source ~/.aws
