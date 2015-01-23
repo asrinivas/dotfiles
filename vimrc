@@ -19,6 +19,8 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-rails'
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 
 filetype plugin indent on
@@ -283,6 +285,8 @@ if has("gui_running")
     set guioptions=egmt
     set background=dark
 endif
+
+let g:session_autoload = 'no'
 
 let g:solarized_termcolors=256
 
