@@ -1,7 +1,9 @@
+# Random exports
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export LC_CTYPE=en_US.UTF-8
 export EDITOR='vim'
+export SBT_SCALA_VERSION=2.10.4
 
 # Random aliases
 alias wget="curl -O"
@@ -19,6 +21,7 @@ alias gl='git prettylog'
 alias gd='git cdiff'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
+alias grf="git checkout master && git pull && git co - && git merge master"
 
 # Git prompt/completion
 source ~/.git-prompt.sh
@@ -44,4 +47,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # AWS
-source ~/.aws
+if [ -f ~/.aws ]; then
+    source ~/.aws
+fi

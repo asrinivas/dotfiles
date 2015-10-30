@@ -19,8 +19,6 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-rails'
-Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 
 filetype plugin indent on
@@ -211,7 +209,13 @@ let g:erlangFoldSplitFunction = 0
 let g:Powerline_symbols = "fancy"
 let g:Powerline_theme = "custom"
 let g:Powerline_colorscheme = "custom"
-" call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+
+" Set airline to use fancy shit
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 
 " Setup ctrlp
 let g:ctrlp_max_files = 10000
@@ -228,7 +232,7 @@ let g:ycm_max_diagnostics_to_display = 30
 " Optimize file searching
 let g:ctrlp_custom_ignore = '\\.vagrant\|\\.git\|\\.hg\|\\.svn\|env\|.beam\|ebin\|deps\|\\.eunit\|\\.pyc$\|\\.o$'
 if has("unix")
-    let g:ctrlp_user_command = {
+  let g:ctrlp_user_command = {
                 \   'fallback': 'find %s -type f | egrep -v ' . g:ctrlp_custom_ignore .' | head -' . g:ctrlp_max_files
                 \ }
 endif
@@ -274,21 +278,23 @@ iabbrev ldiz ( ͠° ͟ʖ ͡°)
 
 " Set the Gvim options
 if has("gui_running")
-    set guifont=Monaco:h12
-    set columns=160
-    set lines=50
-    set sessionoptions=blank,buffers,curdir,folds,localoptions,options,resize,tabpages,winpos,winsize
-    map <C-Z> :mksession! ~/.vim/.session <CR>
-    map <C-X> :source ~/.vim/.session <CR>
-    colorscheme solarized
-    set fuopt+=maxhorz
-    set guioptions=egmt
-    set background=dark
+  set guifont=Inconsolata-dz:h16
+  set columns=160
+  set lines=50
+  set sessionoptions=blank,buffers,curdir,folds,localoptions,options,resize,tabpages,winpos,winsize
+  map <C-Z> :mksession! ~/.vim/.session <CR>
+  map <C-X> :source ~/.vim/.session <CR>
+  syntax enable
+  set background=light
+  colorscheme solarized
+  set fuopt+=maxhorz
+  set guioptions=egmt
+  set background=dark
 endif
 
-let g:session_autoload = 'no'
-
 let g:solarized_termcolors=256
+
+let g:session_autosave = 'no'
 
 " Scala settings
 let g:scala_sort_across_groups=1

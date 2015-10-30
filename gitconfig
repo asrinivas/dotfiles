@@ -1,8 +1,8 @@
 [core]
     editor = vim
-	excludesfile = /Users/anirudh/.gitignore
+    excludesfile = /Users/anirudh/.gitignore
 [color]
-    ui = true
+    ui = 1
 [user]
     name = Anirudh Srinivas
     email = anirudhsrinivas@gmail.com
@@ -13,8 +13,13 @@
     prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     publish = !gx-publish
     update = !gx-update
-    st = status
+    st = status -sb
+    p = pull
 [push]
     default = tracking
 [github]
     user = asrinivas
+[filter "media"]
+    clean = git media clean %f
+    smudge = git media smudge %f
+    required = true
