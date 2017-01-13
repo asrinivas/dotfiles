@@ -14,14 +14,23 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'mattn/webapi-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'crusoexia/vim-javascript-lib'
+Plugin 'pangloss/vim-javascript'
 call vundle#end()
 
 filetype plugin indent on
+
+" NeoVim settings
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set clipboard+=unnamedplus
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " 16 color terminal
 set t_Co=256
@@ -97,7 +106,7 @@ noremap <C-y> 3<C-y>
 set wildignore+=*.o,*.pyc,*.beam,*.class,*~
 
 " Make our shell interactive
-set shellcmdflag=-ic
+"set shellcmdflag=-ic
 
 " Allow switching away from changed buffers
 set hidden
@@ -191,7 +200,7 @@ inoremap <c-j> <esc>o
 nnoremap <leader>ss :syntax sync fromstart<cr>:redraw!<cr>
 
 " Configure syntastic
-let g:syntastic_mode_map = {'mode': 'active', 'passive_filetypes': ['erlang', 'html', 'scala'] }
+let g:syntastic_mode_map = {'mode': 'active', 'passive_filetypes': ['erlang', 'html', 'scala', 'js'] }
 let g:syntastic_javascript_jsl_conf = "-conf ~/.jslintrc"
 let g:syntastic_always_populate_loc_list=1
 
@@ -276,6 +285,8 @@ nnoremap <silent> <leader>k :GitGutterPrevHunk<cr>
 " Adding abbrev
 iabbrev ldiz ( ͠° ͟ʖ ͡°)
 
+let g:solarized_termcolors=256
+
 " Set the Gvim options
 if has("gui_running")
   set guifont=Inconsolata-dz:h16
@@ -285,16 +296,15 @@ if has("gui_running")
   map <C-Z> :mksession! ~/.vim/.session <CR>
   map <C-X> :source ~/.vim/.session <CR>
   syntax enable
-  set background=light
   colorscheme solarized
+  set background=dark
   set fuopt+=maxhorz
   set guioptions=egmt
+else
+  syntax enable
+  colorscheme monokai
   set background=dark
 endif
-
-let g:solarized_termcolors=256
-
-let g:session_autosave = 'no'
 
 " Scala settings
 let g:scala_sort_across_groups=1

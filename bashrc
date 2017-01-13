@@ -41,12 +41,12 @@ export PATH=$HOME/.node/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$PATH:$(brew --prefix mysql)/bin
 export PATH=$PATH:~/.play
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # AWS
 if [ -f ~/.aws ]; then
     source ~/.aws
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -60,14 +60,14 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -77,40 +77,38 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Iterable aliases
-alias iterable='cd ~/workspace/Iterable'
-alias prune="play '~run'"
-alias -g te='"tail -f -n 100 /usr/local/var/log/elasticsearch/elasticsearch_iterable_prod.log"'
-alias -g tesl='"tail -f -n 100 /usr/local/var/log/elasticsearch/elasticsearch_iterable_prod_index_search_slowlog.log"'
-alias -g teil='"tail -f -n 100 /usr/local/var/log/elasticsearch/elasticsearch_iterable_prod_index_indexing_slowlog.log"'
+alias wget="curl -O"
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias ll='ls -laG'
+alias work='cd ~/workspace'
+alias kadabra='cd ~/workspace/kadabra'
+alias refsh="source ~/.zshrc"
 
 # Random exports
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export LC_CTYPE=en_US.UTF-8
-export EDITOR='vim'
 export SBT_SCALA_VERSION=2.10.4
 export DEFAULT_USER='anirudh'
 export GIT_PAGER="less -FX"
 
-# Random aliases
-alias wget="curl -O"
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias ll='ls -la'
+# NVim exports
+export EDITOR='nvim'
+export TERM=xterm-256color
 
 # Git aliases
-alias gs='git status'
+alias gs='git st'
 alias ga='git add'
 alias gc='git commit'
-alias gp='git push'
 alias gf='git fetch origin'
 alias gr='git rebase origin'
 alias gl='git prettylog'
 alias gd='git cdiff'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
-alias grf="git checkout master && git pull && git co - && git merge master"
+alias grf='git checkout master && git pull && git co - && git merge master'
+alias gpu='git push'
+alias gpo='git pull'
 
 # Git prompt/completion
 source ~/.git-prompt.sh
@@ -130,17 +128,17 @@ export PATH=$HOME/.node/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$PATH:$(brew --prefix mysql)/bin
 export PATH=$PATH:~/.play
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Urlencode text
 function urlencode {
   print "${${(j: :)@}//(#b)(?)/%$[[##16]##${match[1]}]}"
 }
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # AWS
-if [ -f ~/.aws ]; then
-    source ~/.aws
+if [ -d $HOME/.aws ]; then
+  source ~/.aws/env
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
