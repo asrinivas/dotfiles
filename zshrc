@@ -96,8 +96,11 @@ export GIT_PAGER="less -FX"
 export EDITOR='nvim'
 export TERM=xterm-256color
 
+# Random Aliases
+alias refsh='source ~/.zshrc'
+
 # Git aliases
-alias gs='git st'
+alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gf='git fetch origin'
@@ -129,6 +132,14 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$PATH:$(brew --prefix mysql)/bin
 export PATH=$PATH:~/.play
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+
 
 # Urlencode text
 function urlencode {
